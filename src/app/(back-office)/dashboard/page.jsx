@@ -1,5 +1,6 @@
 import Heading from "@/components/back-office/Heading";
-import LargeCards from "@/components/back-office/LargeCards";
+import LargeCards from "@/components/back-office/cards/LargeCards";
+import SmallCards from "@/components/back-office/cards/SmallCards";
 
 export default function page() {
   return (
@@ -8,6 +9,7 @@ export default function page() {
       {/* large cards */}
       <LargeCards />
       {/* Small cards */}
+      <SmallCards />
       {/* charts */}
       {/* recent order table */}
     </div>

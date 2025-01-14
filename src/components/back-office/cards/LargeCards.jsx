@@ -20,12 +20,12 @@ export default function LargeCards() {
     {
       period: "Last Month",
       sales: "3.5M",
-      color: "bg-purple-600 ",
+      color: "bg-red-500",
     },
     {
       period: "All-time Sales",
       sales: "100M",
-      color: "bg-red-600 ",
+      color: "bg-purple-600  ",
     },
   ];
   return (
