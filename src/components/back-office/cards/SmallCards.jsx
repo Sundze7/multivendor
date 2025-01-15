@@ -1,37 +1,43 @@
+import { CheckCheck, Loader2, RefreshCcw, ShoppingCart } from "lucide-react";
 import SmallCard from "./SmallCard";
 
 export default function SmallCards() {
-  const orderStats = [
+  const orderStatus = [
     {
-      period: "Today Orders",
-      sales: "250k",
-      color: "bg-green-600 ",
+      title: "Total Orders",
+      number: 500,
+      icon: ShoppingCart,
+      iconBg: "bg-green-600 ",
     },
     {
-      period: "Yesterday Orders",
-      sales: "200k",
-      color: "bg-orange-600 ",
+      title: "Orders Pending",
+      number: 50,
+      icon: Loader2,
+      iconBg: "bg-orange-600 ",
     },
     {
-      period: "This Month",
-      sales: "4.0M",
-      color: "bg-blue-600 ",
+      title: "Orders Processing",
+      number: 150,
+      icon: RefreshCcw,
+      iconBg: "bg-blue-600 ",
     },
     {
-      period: "Last Month",
-      sales: "3.5M",
-      color: "bg-red-600",
+      title: "Orders Delivered",
+      number: 300,
+      icon: CheckCheck,
+      iconBg: "bg-red-600",
     },
     {
-      period: "All-time Sales",
-      sales: "100M",
-      color: "bg-purple-600  ",
+      title: "All-time Orders",
+      number: 60000,
+      icon: ShoppingCart,
+      iconBg: "bg-purple-600  ",
     },
   ];
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-8">
-      {orderStats.map((item, i) => {
-        return <SmallCard />;
+      {orderStatus.map((data, i) => {
+        return <SmallCard data={data} key={i} />;
       })}
     </div>
   );
