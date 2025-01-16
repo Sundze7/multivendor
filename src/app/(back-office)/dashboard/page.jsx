@@ -1,6 +1,7 @@
 import Heading from "@/components/back-office/Heading";
 import LargeCards from "@/components/back-office/cards/LargeCards";
 import SmallCards from "@/components/back-office/cards/SmallCards";
+import DashboardCharts from "@/components/back-office/charts/DashboardCharts";
 
 export default function page() {
   return (
@@ -11,6 +12,7 @@ export default function page() {
       {/* Small cards */}
       <SmallCards />
       {/* charts */}
+      <DashboardCharts />
       {/* recent order table */}
     </div>
   );
