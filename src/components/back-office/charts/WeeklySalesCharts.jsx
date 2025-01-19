@@ -69,10 +69,32 @@ export default function WeeklySalesCharts() {
     {
       title: "Sales",
       type: "sales",
+      data: {
+        labels,
+        datasets: [
+          {
+            label: "Sales",
+            data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
+            borderColor: "rgb(255, 99, 132)",
+            backgroundColor: "rgba(255, 99, 132, 0.5)",
+          },
+        ],
+      },
     },
     {
       title: "Orders",
       type: "orders",
+      data: {
+        labels,
+        datasets: [
+          {
+            label: "Orders",
+            data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
+            borderColor: "rgb(0, 137, 132)",
+            backgroundColor: "rgba(0, 137, 132, 0.5)",
+          },
+        ],
+      },
     },
   ];
   const [chartsToDisplay, setChartsToDisplay] = useState(tabs[0].type);
@@ -105,7 +127,7 @@ export default function WeeklySalesCharts() {
         {/* Content to display */}
         {tabs.map((tab, i) => {
           if (chartsToDisplay === tab.type) {
-            return <Line options={options} data={data} />;
+            return <Line options={options} data={tab.data} />;
           }
           return null;
         })}
