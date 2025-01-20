@@ -103,12 +103,12 @@ export default function WeeklySalesCharts() {
       <h2 className="text-xl font-bold mb-4">Weekly Sales</h2>
 
       <div className="p-4">
-        <div class="text-sm font-medium text-center text-gray-200 border-b border-gray-400 dark:text-gray-400 dark:border-gray-700">
-          <ul class="flex flex-wrap -mb-px">
+        <div className="text-sm font-medium text-center text-gray-200 border-b border-gray-400 dark:text-gray-400 dark:border-gray-700">
+          <ul className="flex flex-wrap -mb-px">
             {tabs.map((tab, i) => {
               return (
                 // tabs
-                <li class="me-2" key={i}>
+                <li className="me-2" key={i}>
                   <button
                     onClick={() => setChartsToDisplay(tab.type)}
                     className={
