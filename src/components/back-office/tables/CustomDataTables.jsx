@@ -8,8 +8,9 @@ export default function CustomDataTables() {
   const endIndex = startIndex + PAGE_SIZE;
   const currentlyDisplayedData = data.slice(startIndex, endIndex);
   const totalPages = Math.ceil(data.length / PAGE_SIZE);
+  const itemStartIndex = startIndex + 1;
+  const itemsEndIndex = Math.min(startIndex + PAGE_SIZE, data.length);
 
-  function handlesPageChange(page) {}
   return (
     <div>
       <h2 className="text-xl font-bold mb-4">Recent Orders</h2>
@@ -107,11 +108,11 @@ export default function CustomDataTables() {
             <span className="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">
               Showing{" "}
               <span className="font-semibold text-gray-50 dark:text-white">
-                1-10
+                {itemStartIndex}-{itemsEndIndex}
               </span>{" "}
               of{" "}
               <span className="font-semibold text-gray-50 dark:text-white">
-                1000
+                {data.length}
               </span>
             </span>
             <ul className="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
