@@ -102,7 +102,7 @@ export default function CustomDataTables() {
           </table>
 
           <nav
-            className="flex items-center flex-column flex-wrap md:flex-row justify-between pt-4"
+            className="flex items-center flex-column flex-wrap md:flex-row justify-between p-4"
             aria-label="Table navigation"
           >
             <span className="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">
@@ -125,47 +125,27 @@ export default function CustomDataTables() {
                   Previous
                 </button>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                >
-                  1
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                >
-                  2
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  aria-current="page"
-                  className="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
-                >
-                  3
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                >
-                  4
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                >
-                  5
-                </a>
-              </li>
+              {
+                // Array.from take an iterable and a map fxn: the underscore in a map fxn means we are not iterested in the first item, so we drop it
+                Array.from({ length: totalPages }, (_, index) => {
+                  return (
+                    <li key={index}>
+                      <button
+                        onClick={() => setCurrentPage(index + 1)}
+                        disabled={currentPage == index + 1}
+                        className={
+                          currentPage == index + 1
+                            ? "flex items-center justify-center px-3 h-8 leading-tight text-white bg-blue-600 border border-blue-300 hover:bg-gray-100 hover:text-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                            : "flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                        }
+                      >
+                        {index + 1}
+                      </button>
+                    </li>
+                  );
+                })
+              }
+
               <li>
                 <button
                   onClick={() => setCurrentPage(currentPage + 1)}
