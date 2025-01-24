@@ -127,7 +127,7 @@ export default function WeeklySalesCharts() {
         {/* Content to display */}
         {tabs.map((tab, i) => {
           if (chartsToDisplay === tab.type) {
-            return <Line options={options} data={tab.data} />;
+            return <Line options={options} data={tab.data} key={i} />;
           }
           return null;
         })}
