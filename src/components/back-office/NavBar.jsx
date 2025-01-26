@@ -18,6 +18,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import ThemeSwicherBtn from "./darkMode/ThemeSwicher";
 
 export default function NavBar() {
   return (
@@ -28,17 +29,15 @@ export default function NavBar() {
       </button>
       {/* 3 Icons */}
       <div className="flex space-x-3 ">
-        <button>
+        <ThemeSwicherBtn />
+        {/* <button>
           <Sun className="text-green-600" />
-        </button>
+        </button> */}
 
         <DropdownMenu>
           <DropdownMenuTrigger>
             {" "}
-            <button
-              type="button"
-              className="relative inline-flex items-center p-3 text-sm font-medium text-center text-white bg-transparent rounded-lg focus:ring-4 focus:outline-none  cursor-pointer"
-            >
+            <button className="relative inline-flex items-center p-3 text-sm font-medium text-center text-white bg-transparent rounded-lg focus:ring-4 focus:outline-none  cursor-pointer">
               <Bell className="text-green-600" />
               <span className="sr-only">Notifications</span>
               <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 rounded-full -top-1 end-4 dark:border-gray-900">
