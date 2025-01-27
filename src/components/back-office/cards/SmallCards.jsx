@@ -1,4 +1,10 @@
-import { CheckCheck, Loader2, RefreshCcw, ShoppingCart } from "lucide-react";
+import {
+  CheckCheck,
+  Loader2,
+  LoaderPinwheel,
+  RefreshCcw,
+  ShoppingCart,
+} from "lucide-react";
 import SmallCard from "./SmallCard";
 
 export default function SmallCards() {
@@ -12,7 +18,7 @@ export default function SmallCards() {
     {
       title: "Orders Pending",
       number: 50,
-      icon: Loader2,
+      icon: LoaderPinwheel,
       iconBg: "bg-orange-600 ",
     },
     {

@@ -1,7 +1,9 @@
 export default function Heading({ title }) {
   return (
     <div>
-      <h2 className="text-2xl font-semibold text-slate-50">{title}</h2>
+      <h2 className="text-2xl font-semibold dark:text-slate-50 text-slate-800">
+        {title}
+      </h2>
     </div>
   );
 }
