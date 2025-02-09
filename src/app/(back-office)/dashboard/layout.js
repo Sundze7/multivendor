@@ -1,3 +1,4 @@
+"use client";
 import NavBar from "@/components/back-office/NavBar";
 import Sidebar from "@/components/back-office/Sidebar";
 
