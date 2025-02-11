@@ -1,10 +1,15 @@
 "use client";
 import {
+  Box,
   ChevronRightIcon,
   ExternalLink,
   LayoutGrid,
+  LayoutList,
   ListOrdered,
   LogOut,
+  Monitor,
+  ScanSearch,
+  SendToBack,
   Settings,
   Slack,
   Tractor,
@@ -61,28 +66,28 @@ export default function Sidebar() {
   ];
   const catalogueLinks = [
     {
-      title: "Procucts",
-      icon: User,
-      href: "/dashboard/procucts",
+      title: "Products",
+      icon: Box,
+      href: "/dashboard/products",
     },
     {
       title: "Categories",
-      icon: Warehouse,
+      icon: LayoutList,
       href: "/dashboard/categories",
     },
     {
       title: "Attributes",
-      icon: Tractor,
+      icon: SendToBack,
       href: "/dashboard/attributes",
     },
     {
       title: "Coupons",
-      icon: ListOrdered,
+      icon: ScanSearch,
       href: "/dashboard/coupons",
     },
     {
       title: "Store sliders",
-      icon: User2,
+      icon: Monitor,
       href: "/dashboard/sliders",
     },
   ];
@@ -107,8 +112,8 @@ export default function Sidebar() {
         </Link>
 
         <Collapsible>
-          <CollapsibleTrigger>
-            <button className="flex space-x-6 items-center px-6 py-2 border-l-4 ">
+          <CollapsibleTrigger className="px-6">
+            <button className="flex space-x-6 items-center py-2 ">
               <div className="flex space-x-3 items-center">
                 <Slack />
                 <span className="">Catalogue</span>
@@ -116,19 +121,20 @@ export default function Sidebar() {
               <ChevronRightIcon />
             </button>
           </CollapsibleTrigger>
-          <CollapsibleContent>
+          <CollapsibleContent className=" dark:bg-slate-800 mx-6 py-2 rounded-lg text-sm">
             {catalogueLinks.map((item, i) => {
+              const Icon = item.icon;
               return (
                 <Link
                   key={i}
                   href={item.href}
                   className={
                     pathname == item.href
-                      ? "flex space-x-3 px-6 py-2 border-l-8 border-lime-400 text-lime-500"
-                      : "flex space-x-3 px-6 py-2   "
+                      ? "flex space-x-3 px-6 py-1text-lime-500"
+                      : "flex space-x-3 px-6 py-1 "
                   }
                 >
-                  <LayoutGrid />
+                  <Icon className="text-sm" />
                   <span className="">{item.title}</span>
                 </Link>
               );
