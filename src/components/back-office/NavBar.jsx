@@ -18,11 +18,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import ThemeSwicherBtn from "./darkMode/ThemeSwicher";
 
-export default function NavBar() {
+export default function NavBar({ toggleSideBar }) {
   return (
-    <div className="flex items-center justify-between dark:bg-slate-800 bg-slate-100 text-slate-50 h-20 px-8 py-4 fixed top-0 left-64 right-0 shadow-xl">
+    <div className="flex items-center justify-between dark:bg-slate-800 bg-slate-100 text-slate-50 h-20 px-8 py-4 fixed top-0 md:left-64 right-0 left-0 shadow-xl z-50">
       {/* Icon */}
-      <button>
+      <button onClick={toggleSideBar} className="">
         <AlignJustify className="dark:text-white text-green-600" />
       </button>
       {/* 3 Icons */}

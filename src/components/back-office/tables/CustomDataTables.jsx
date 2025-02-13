@@ -13,12 +13,12 @@ export default function CustomDataTables() {
 
   return (
     <div>
-      <h2 className="text-xl font-bold mt-8 ml-8 dark:text-slate-100 text-slate-800">
+      <h2 className="text-xl font-bold mb-4 mt-8 md:ml-8  dark:text-slate-100 text-slate-800">
         Recent Orders
       </h2>
       {/* Table */}
 
-      <div className="p-8">
+      <div className="md:p-8">
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -30,7 +30,7 @@ export default function CustomDataTables() {
                       type="checkbox"
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     />
-                    <label for="checkbox-all-search" className="sr-only">
+                    <label htmlFor="checkbox-all-search" className="sr-only">
                       checkbox
                     </label>
                   </div>

@@ -1,6 +1,7 @@
 "use client";
 import {
   Box,
+  ChevronDown,
   ChevronRightIcon,
   ExternalLink,
   LayoutGrid,
@@ -24,8 +25,9 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { useState } from "react";
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen }) {
   const pathname = usePathname();
   const sideBarLinks = [
     {
@@ -91,10 +93,14 @@ export default function Sidebar() {
       href: "/dashboard/sliders",
     },
   ];
+  const [openCaret, setOpenCaret] = useState(false);
   return (
-    <div className="dark:bg-slate-700 bg-slate-100  space-y-5 w-64 h-screen dark:text-slate-100 text-slate-800 fixed left-0 top-0 shadow-md">
-      <div className=" ml-8 px-6 py-4 ">
-        <Link href="" className="mb-6 text-4xl font-bold">
+    <div
+      className={`z-40 transition-transform duration-300 fixed top-20 md:top-0 left-0 h-screen md:w-64 bg-slate-100 dark:bg-slate-700 shadow-md 
+      ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}
+    >
+      <div className="flex justify-between items-center ml-8 px-6 py-4 ">
+        <Link href="" className="mb-6 md:text-4xl text-2xl font-bold">
           Logo
         </Link>
       </div>
@@ -112,13 +118,16 @@ export default function Sidebar() {
         </Link>
 
         <Collapsible>
-          <CollapsibleTrigger className="px-6">
+          <CollapsibleTrigger
+            className="px-6"
+            onClick={() => setOpenCaret(!openCaret)}
+          >
             <button className="flex space-x-6 items-center py-2 ">
-              <div className="flex space-x-3 items-center">
+              <div className="flex space-x-3 items-center cursor-pointer">
                 <Slack />
                 <span className="">Catalogue</span>
               </div>
-              <ChevronRightIcon />
+              {openCaret ? <ChevronRightIcon /> : <ChevronDown />}
             </button>
           </CollapsibleTrigger>
           <CollapsibleContent className=" dark:bg-slate-800 mx-6 py-2 rounded-lg text-sm">
