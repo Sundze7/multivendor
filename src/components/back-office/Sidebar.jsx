@@ -3,7 +3,9 @@ import {
   Box,
   ChevronDown,
   ChevronRightIcon,
+  CircleDollarSign,
   ExternalLink,
+  Globe,
   LayoutGrid,
   LayoutList,
   ListOrdered,
@@ -16,6 +18,7 @@ import {
   Tractor,
   User,
   User2,
+  Users,
   Warehouse,
 } from "lucide-react";
 import Link from "next/link";
@@ -52,8 +55,18 @@ export default function Sidebar({ isOpen }) {
     },
     {
       title: "Our Staff",
-      icon: User2,
+      icon: Users,
       href: "/dashboard/staff",
+    },
+    {
+      title: "Our Community",
+      icon: Globe,
+      href: "/dashboard/community",
+    },
+    {
+      title: "Wallet",
+      icon: CircleDollarSign,
+      href: "/dashboard/wallet",
     },
     {
       title: "Settings",
@@ -96,7 +109,7 @@ export default function Sidebar({ isOpen }) {
   const [openCaret, setOpenCaret] = useState(false);
   return (
     <div
-      className={`z-40 transition-transform duration-300 fixed top-20 md:top-0 left-0 h-screen md:w-64 bg-slate-100 dark:bg-slate-700 shadow-md 
+      className={`z-40 transition-transform duration-300 fixed top-20 md:top-0 left-0 h-screen md:w-64 bg-slate-100 dark:text-slate-300 dark:bg-slate-700 shadow-md overflow-y-scroll 
       ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}
     >
       <div className="flex justify-between items-center ml-8 px-6 py-4 ">
