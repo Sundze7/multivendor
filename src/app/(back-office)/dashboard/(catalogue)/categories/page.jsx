@@ -1,4 +1,5 @@
 import PageHeader from "@/components/back-office/PageHeader";
+import TableActions from "@/components/back-office/TableActions";
 
 export default function page() {
   return (
@@ -10,8 +11,12 @@ export default function page() {
         linkTitle="Add Category"
       />
       {/* Table  Actions */}
+      {/* Export || Search || Bulk Delete */}
+      <TableActions />
 
-      <h2>Categories</h2>
+      <div className="py-8">
+        <h2>Categories</h2>
+      </div>
     </div>
   );
 }

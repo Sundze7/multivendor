@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function PageHeader({ heading, href, linkTitle }) {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between py-4 mb-4">
       <Heading title={heading} />
       <Link
         href={href}
