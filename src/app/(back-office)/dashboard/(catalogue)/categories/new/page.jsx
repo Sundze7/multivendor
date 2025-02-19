@@ -2,6 +2,7 @@
 import FormHeader from "@/components/back-office/FormHeader";
 import SubmitButton from "@/components/back-office/forms/SubmitButton";
 import TextInput from "@/components/back-office/forms/TextInput";
+import TextAreaInput from "@/components/back-office/forms/TextAreaInput";
 import { useForm } from "react-hook-form";
 
 export default function NewCategory() {
@@ -25,6 +26,12 @@ export default function NewCategory() {
           <TextInput
             label="Category Title"
             name="title"
+            register={register}
+            errors={errors}
+          />
+          <TextAreaInput
+            label="Category Description"
+            name="description"
             register={register}
             errors={errors}
           />

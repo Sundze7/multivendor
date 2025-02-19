@@ -1,11 +1,10 @@
 "use client";
-export default function TextInput({
+export default function TextAreaInput({
   label,
   name,
   register,
   errors,
   isRequired = true,
-  type = "text",
   className = "sm:col-span-2",
   defaultValue = "",
 }) {
@@ -18,14 +17,13 @@ export default function TextInput({
         {label}
       </label>
       <div className="mt-2">
-        <input
+        <textarea
           {...register(`${name}`, { required: isRequired })}
-          type={type}
           name={name}
           id={name}
+          rows={1}
+          className=" block w-full rounded-md border-0 py-3.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset dark:focus:ring-slate-500 focus:ring-lime-500  sm:text-sm sm:leading-6 dark:bg-transparent dark:text-slate-100 outline-0"
           defaultValue={defaultValue}
-          autoComplete={name}
-          className=" block w-full rounded-md border-0 py-2.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset dark:focus:ring-slate-500 focus:ring-lime-500  sm:text-sm sm:leading-6 dark:bg-transparent dark:text-slate-100 outline-0"
           placeholder={`Type the ${label.toLowerCase()}`}
         />
         {
