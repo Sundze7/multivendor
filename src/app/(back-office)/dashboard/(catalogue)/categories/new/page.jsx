@@ -4,6 +4,7 @@ import SubmitButton from "@/components/back-office/forms/SubmitButton";
 import TextInput from "@/components/back-office/forms/TextInput";
 import TextAreaInput from "@/components/back-office/forms/TextAreaInput";
 import { useForm } from "react-hook-form";
+import { generateSlug } from "@/lib/generateSlug";
 
 export default function NewCategory() {
   const {
@@ -12,6 +13,8 @@ export default function NewCategory() {
     formState: { errors },
   } = useForm();
   async function onSubmit(data) {
+    const slug = generateSlug(data.title);
+    data.slug = slug;
     console.log(data);
   }
 
