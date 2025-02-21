@@ -13,6 +13,15 @@ export default function NewCategory() {
     formState: { errors },
   } = useForm();
   async function onSubmit(data) {
+    {
+      /* 
+      ID => auto
+      Title
+      Slug => auto
+      Description
+      Image
+       */
+    }
     const slug = generateSlug(data.title);
     data.slug = slug;
     console.log(data);
@@ -45,14 +54,6 @@ export default function NewCategory() {
           loadingButtonTitle="Creating Category please wait..."
         />
       </form>
-
-      {/* 
-      ID
-      Title
-      Slug
-      Description
-      Image
-       */}
     </div>
   );
 }
